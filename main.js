@@ -81,3 +81,8 @@ const discountedBooks = availableBooks.map((book) => {
   };
 });
 console.log(discountedBooks);
+
+const fullPricedBook = discountedBooks.find((book) =>
+  Number.isInteger(parseFloat(book.price)),
+);
+console.log(fullPricedBook);
