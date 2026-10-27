@@ -55,6 +55,7 @@ Stampa in console ogni titolo nella console.
 
 const longBooks = books.filter((book) => book.pages > 300);
 const longBooksTitles = books.map((book) => book.title);
+longBooksTitles.forEach((title) => console.log(title));
 
 console.log(longBooks);
 console.log(longBooksTitles);
