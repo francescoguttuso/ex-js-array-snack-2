@@ -152,7 +152,21 @@ getBooks(ids)
   .then((books) => console.log(books))
   .catch((error) => console.error(error));
 
-const ageSum = ages.reduce((acc, curr) => acc + curr, 0);
-console.log(ageSum);
+/*
+Snack 6 (Bonus) - Ordina i libri
+Crea una variabile booleana (areThereAvailableBooks) per verificare se c’è almeno un libro disponibile.
+Crea un array (booksByPrice) con gli elementi di books ordinati in base al prezzo (crescente).
+Ordina l’array booksByPricein base alla disponibilità (prima quelli disponibili), senza creare un nuovo array.
+*/
 
-console.log(ageSum / ages.length);
+const areThereAvailableBooks = books.some(
+  (book) => book.available
+);
+const booksByPrice = [...books].sort((a, b) => {
+  return a.price - b.price;
+});
+booksByPrice.sort((a, b) => {
+  return Number(b.available) - Number(a.available);
+});
+
+
